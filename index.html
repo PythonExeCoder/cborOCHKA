@@ -64,9 +64,7 @@
         body { cursor: auto; }
     }
 
-    /* ═══════════════════════════════════════════════════════ */
-    /* ══════════════════ CINEMATIC INTRO ═══════════════════ */
-    /* ═══════════════════════════════════════════════════════ */
+    /* ═══════════════ CINEMATIC INTRO ═══════════════ */
     .intro {
         position: fixed;
         inset: 0;
@@ -450,9 +448,7 @@
         100% { transform: translate(0, 0); filter: hue-rotate(0); }
     }
 
-    /* ═══════════════════════════════════════════════════════ */
-    /* ═════════════ SITE · CAMERA "LOOK DOWN" ENTRY ════════ */
-    /* ═══════════════════════════════════════════════════════ */
+    /* ═══════════════ SITE · CAMERA "LOOK DOWN" ENTRY ═══════════════ */
     .site-perspective {
         perspective: 2400px;
         perspective-origin: 50% 0%;
@@ -895,10 +891,22 @@
     .pack.reveal .chip:nth-child(1) { transition-delay: 0.35s; }
     .pack.reveal .chip:nth-child(2) { transition-delay: 0.45s; }
     .pack.reveal .chip:nth-child(3) { transition-delay: 0.55s; }
+    .pack.reveal .chip:nth-child(4) { transition-delay: 0.65s; }
     .chip.ghost {
         background: transparent;
         color: var(--muted-2);
         border-color: var(--line);
+    }
+    /* Чип с размером файла */
+    .chip.size {
+        font-family: 'JetBrains Mono', monospace;
+        letter-spacing: 0.5px;
+        text-transform: none;
+        background: transparent;
+        color: var(--muted);
+        border-color: var(--line);
+        font-weight: 500;
+        font-size: 11px;
     }
 
     .pack h3 {
@@ -1020,6 +1028,25 @@
         transform: translateY(-2px);
     }
     .btn-line > * { position: relative; z-index: 1; }
+
+    /* Счётчик внутри кнопки */
+    .btn-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 24px;
+        height: 22px;
+        padding: 0 7px;
+        margin-left: 2px;
+        border-radius: 6px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        border: 1px solid var(--accent-border);
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0;
+    }
 
     .pack.orange {
         --accent: #ff8a3d;
@@ -1399,6 +1426,7 @@
 
         <section class="packs">
 
+            <!-- 01 · Classic PvP 1.21.4 -->
             <article class="pack orange">
                 <div class="pack-num"><span>01</span></div>
                 <div class="pack-body">
@@ -1406,16 +1434,23 @@
                         <span class="chip">PvP</span>
                         <span class="chip ghost">1.21.4</span>
                         <span class="chip ghost">Fabric</span>
+                        <span class="chip size">176 MB</span>
                     </div>
                     <h3>Classic PvP</h3>
                     <p>Всё для PvP, ничего лишнего. Всё оптимизировано для максимального FPS и минимального отклика.</p>
                 </div>
                 <div class="pack-actions">
-                    <a href="#" class="btn btn-line"><span>Список модов</span></a>
-                    <a href="#" class="btn btn-solid"><span>Скачать</span></a>
+                    <a href="https://github.com/PythonExeCoder/cborOCHKA/releases/tag/cc" target="_blank" rel="noopener" class="btn btn-line">
+                        <span>Список модов</span>
+                        <span class="btn-count">176M</span>
+                    </a>
+                    <a href="https://github.com/PythonExeCoder/cborOCHKA/releases/download/cc/1.21.4.PVP.zip" target="_blank" rel="noopener" class="btn btn-solid">
+                        <span>Скачать</span>
+                    </a>
                 </div>
             </article>
 
+            <!-- 02 · Modern PvP 1.21.11 -->
             <article class="pack red">
                 <div class="pack-num"><span>02</span></div>
                 <div class="pack-body">
@@ -1423,16 +1458,23 @@
                         <span class="chip">PvP</span>
                         <span class="chip ghost">1.21.11</span>
                         <span class="chip ghost">Fabric</span>
+                        <span class="chip size">37.7 MB</span>
                     </div>
                     <h3>Modern PvP</h3>
                     <p>Всё для PvP, ничего лишнего, всё оптимизировано. Актуальная версия с лучшими клиентскими модами.</p>
                 </div>
                 <div class="pack-actions">
-                    <a href="#" class="btn btn-line"><span>Список модов</span></a>
-                    <a href="#" class="btn btn-solid"><span>Скачать</span></a>
+                    <a href="https://github.com/PythonExeCoder/cborOCHKA/releases/tag/cc" target="_blank" rel="noopener" class="btn btn-line">
+                        <span>Список модов</span>
+                        <span class="btn-count">37M</span>
+                    </a>
+                    <a href="https://github.com/PythonExeCoder/cborOCHKA/releases/download/cc/1.21.11.PVP.zip" target="_blank" rel="noopener" class="btn btn-solid">
+                        <span>Скачать</span>
+                    </a>
                 </div>
             </article>
 
+            <!-- 03 · Atmospheric PvE 1.21.11 -->
             <article class="pack green">
                 <div class="pack-num"><span>03</span></div>
                 <div class="pack-body">
@@ -1440,13 +1482,19 @@
                         <span class="chip">PvE</span>
                         <span class="chip ghost">1.21.11</span>
                         <span class="chip ghost">100+ модов</span>
+                        <span class="chip size">420 MB</span>
                     </div>
                     <h3>Atmospheric PvE</h3>
                     <p>Красивые визуальные моды, всё максимально оптимизировано. Очень сочная картинка и глубокая атмосфера.</p>
                 </div>
                 <div class="pack-actions">
-                    <a href="#" class="btn btn-line"><span>Список модов</span></a>
-                    <a href="#" class="btn btn-solid"><span>Скачать</span></a>
+                    <a href="https://github.com/PythonExeCoder/cborOCHKA/releases/tag/cc" target="_blank" rel="noopener" class="btn btn-line">
+                        <span>Список модов</span>
+                        <span class="btn-count">420M</span>
+                    </a>
+                    <a href="https://github.com/PythonExeCoder/cborOCHKA/releases/download/cc/1.21.11.PVE.zip" target="_blank" rel="noopener" class="btn btn-solid">
+                        <span>Скачать</span>
+                    </a>
                 </div>
             </article>
 
@@ -1473,7 +1521,7 @@
 
         <footer id="footer">
             <div class="footer-inner">
-                <div>© 2026 · Все сборки собраны вручную</div>
+                <div>© 2026 · <a href="https://github.com/PythonExeCoder/cborOCHKA" target="_blank" rel="noopener">PythonExeCoder/cborOCHKA</a></div>
                 <div><a href="https://t.me/IPlayWithYourFeelings" target="_blank" rel="noopener">Написать в Telegram →</a></div>
             </div>
         </footer>
@@ -1482,9 +1530,7 @@
 </div>
 
 <script>
-/* ═══════════════════════════════════════════════════ */
 /* ═════════════ INTRO · CHARACTER ANIMATION ════════ */
-/* ═══════════════════════════════════════════════════ */
 const introTitle = document.getElementById('introTitle');
 const lines = introTitle.querySelectorAll('.intro-line');
 
@@ -1534,11 +1580,9 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         intro.classList.add('leaving');
 
-        // Сайт начинает "всплывать" почти одновременно с исчезновением интро
         setTimeout(() => {
             main.classList.add('visible');
 
-            // Через время отключаем transition на .main, чтобы не мешал hover
             setTimeout(() => {
                 main.classList.add('done-entrance');
             }, 3600);
@@ -1551,31 +1595,6 @@ window.addEventListener('load', () => {
 });
 
 /* ═════════════ HERO TITLE · CHAR SPLIT ══════════ */
-function splitChars(el) {
-    const text = el.dataset.text;
-    if (!text) return;
-    el.innerHTML = '';
-    let globalIndex = 0;
-    [...text].forEach((char) => {
-        if (char === ' ') {
-            const space = document.createElement('span');
-            space.innerHTML = '&nbsp;';
-            space.style.display = 'inline-block';
-            space.style.width = '0.25em';
-            el.appendChild(space);
-            globalIndex++;
-            return;
-        }
-        const span = document.createElement('span');
-        span.className = 'char';
-        span.textContent = char;
-        // Стаггер по всем буквам, включая перенос строки
-        span.style.transitionDelay = `${1.2 + globalIndex * 0.035}s`;
-        el.appendChild(span);
-        globalIndex++;
-    });
-}
-
 const heroTitle = document.querySelector('.hero-title');
 if (heroTitle) {
     const heroLines = heroTitle.querySelectorAll('.line');
@@ -1603,13 +1622,12 @@ if (heroTitle) {
     });
 }
 
-/* Акцент — вторая строка содержит "заточенные" — нужно покрасить */
+/* Акцент во второй строке hero: "заточенные" */
 const heroLinesAll = document.querySelectorAll('.hero-title .line');
 if (heroLinesAll[1]) {
-    const accentStart = 0;
     const accentEnd = 'заточенные'.length;
     const chars = heroLinesAll[1].querySelectorAll('.char');
-    for (let i = accentStart; i < accentEnd && i < chars.length; i++) {
+    for (let i = 0; i < accentEnd && i < chars.length; i++) {
         chars[i].classList.add('accent');
     }
 }
@@ -1639,12 +1657,11 @@ document.querySelectorAll('.section-title, .contact h2').forEach((el) => {
     });
 });
 
-/* Акцентный курсив в заголовке section-title — "свою." */
+/* Акцентный курсив в section-title — "свою." */
 const sectionTitles = document.querySelectorAll('.section-title');
 sectionTitles.forEach((title) => {
     if (title.dataset.text.includes('свою')) {
         const chars = title.querySelectorAll('.char');
-        // последние 5 символов "свою." — accent
         const accentStart = title.dataset.text.length - 5;
         for (let i = accentStart; i < chars.length; i++) {
             chars[i].classList.add('em-italic');
